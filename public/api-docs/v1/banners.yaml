@@ -1,0 +1,152 @@
+paths:
+  /banners:
+    post:
+      summary: Create a new banner
+      operationId: createBanner
+      tags:
+        - banners
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './components.yaml#/components/schemas/CreateBannerRequest'
+      responses:
+        '201':
+          description: Banner created successfully
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/components/schemas/BannerResource'
+        '400':
+          description: Invalid input
+      security:
+        - bearerAuth: []
+    get:
+      summary: Get all banners
+      operationId: listBanners
+      tags:
+        - banners
+      responses:
+        '200':
+          description: A list of banners
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: './components.yaml#/components/schemas/BannerResource'
+      security:
+        - bearerAuth: []
+  /banners/{id}:
+    get:
+      summary: Get a single banner
+      operationId: getBanner
+      tags:
+        - banners
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Detailed information about a banner
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/components/schemas/BannerResource'
+        '404':
+          description: Banner not found
+      security:
+        - bearerAuth: []
+    put:
+      summary: Update a banner
+      operationId: updateBanner
+      tags:
+        - banners
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './components.yaml#/components/schemas/UpdateBannerRequest'
+      responses:
+        '200':
+          description: Banner updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/components/schemas/BannerResource'
+        '404':
+          description: Banner not found
+      security:
+        - bearerAuth: []
+    delete:
+      summary: Delete a banner
+      operationId: deleteBanner
+      tags:
+        - banners
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Banner deleted successfully
+        '404':
+          description: Banner not found
+      security:
+        - bearerAuth: []
+  /banners/{id}/show:
+    post:
+      summary: Record a banner show event
+      operationId: showBanner
+      tags:
+        - banners
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '201':
+          description: Banner show event recorded successfully
+          content:
+            application/json:
+              schema:
+                $ref: './components.yaml#/components/schemas/ShowBannerResource'
+        '400':
+          description: Invalid input
+      security:
+        - bearerAuth: []
+
+  /banners/views:
+      get:
+        summary: Get all banner views
+        operationId: getBannerViews
+        tags:
+          - banners
+        responses:
+          '200':
+            description: A list of banner views
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    $ref: './components.yaml#/components/schemas/ShowBannerResource'
+          '403':
+            description: Unauthorized
+        security:
+          - bearerAuth: []

@@ -19,6 +19,7 @@
         "ensi/laravel-serve-stoplight": "^0.1.4",
         "ensi/laravel-stdout-logs-helper": "^0.2.0",
         "ensi/octane-swoole-urgent-starter": "^2.0",
+        "firebase/php-jwt": "^6.10",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/octane": "^2.0",

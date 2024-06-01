@@ -1,0 +1,87 @@
+components:
+  schemas:
+    CreateBannerRequest:
+      type: object
+      required:
+        - image_url
+        - redirect_url
+        - is_active
+        - name
+      properties:
+        image_url:
+          type: string
+          example: "http://example.com/banner.jpg"
+        redirect_url:
+          type: string
+          example: "http://example.com"
+        is_active:
+          type: boolean
+          example: true
+        name:
+          type: string
+          example: "Summer Sale"
+    UpdateBannerRequest:
+      type: object
+      properties:
+        image_url:
+          type: string
+          example: "http://example.com/banner.jpg"
+        redirect_url:
+          type: string
+          example: "http://example.com"
+        is_active:
+          type: boolean
+          example: true
+        name:
+          type: string
+          example: "Summer Sale"
+    BannerResource:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        image_url:
+          type: string
+          example: "http://example.com/banner.jpg"
+        redirect_url:
+          type: string
+          example: "http://example.com"
+        is_active:
+          type: boolean
+          example: true
+        name:
+          type: string
+          example: "Summer Sale"
+        created_at:
+          type: string
+          format: date-time
+          example: '2021-01-01T12:00:00Z'
+        updated_at:
+          type: string
+          format: date-time
+          example: '2021-01-02T12:00:00Z'
+    ShowBannerResource:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        banner_id:
+          type: integer
+          example: 1
+        date_shown:
+          type: string
+          format: date-time
+          example: '2023-05-27T12:00:00Z'
+        user_id:
+          type: integer
+          example: 1
+        created_at:
+          type: string
+          format: date-time
+          example: '2023-05-27T12:00:00Z'
+        updated_at:
+          type: string
+          format: date-time
+          example: '2023-05-27T12:00:00Z'

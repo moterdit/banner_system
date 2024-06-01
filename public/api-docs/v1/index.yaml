@@ -1,77 +1,34 @@
 openapi: 3.0.3
 info:
-  title: Ensi Backend Skeleton (Replace me)
-  contact:
-    name: API Support
-    url: https://ensi.tech/contacts
-    email: mail@greensight.ru
+  title: Banner Management API
   version: 1.0.0
-  description: Ensi Backend Skeleton Description (Replace me)
+  description: API for managing banners in the system
 servers:
   - url: /api/v1
 tags:
-  - name: examples
-    description: Тэг-пример
+  - name: banners
+    description: Operations related to banners
 paths:
-  /examples/{id}:
-    get:
-      tags:
-        - examples
-      operationId: getExample
-      x-lg-handler: 'App\Http\ApiV1\Modules\Foos\Controllers\FoosController@get'
-      x-lg-route-name: 'getExample'
-      x-lg-skip-request-generation: true
-      summary: Получение объекта типа Example
-      description: Получение объекта типа Example
-      parameters:
-        - $ref: '#/components/parameters/PathId'
-        - $ref: '#/components/parameters/QueryInclude'
-      responses:
-        #"200":
-          #description: Успешный ответ
-          # content:
-          #  application/json:
-          #    schema:
-          #      $ref: './customers.yaml#/CustomerResponse'
-        "404":
-          $ref: '#/components/responses/NotFound'
-        "500":
-          $ref: '#/components/responses/ServerError'
+  /banners:
+    $ref: './banners.yaml#/paths/~1banners'
+  /banners/{id}:
+    $ref: './banners.yaml#/paths/~1banners~1{id}'
+  /banners/{id}/show:
+    $ref: './banners.yaml#/paths/~1banners~1{id}~1show'
+  /banners/views:
+    $ref: './banners.yaml#/paths/~1banners~1views'
 components:
-  parameters:
-    QueryInclude:
-      $ref: './common_parameters.yaml#/QueryInclude'
-    PathId:
-      $ref: './common_parameters.yaml#/PathId'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
   schemas:
-    EmptyDataResponse:
-      type: object
-      properties:
-        data:
-          type: object
-          nullable: true
-        meta:
-          type: object
-      required:
-          - data
-    PaginationTypeEnum:
-      $ref: './common_schemas.yaml#/PaginationTypeEnum'
-  responses:
-    BadRequest:
-      description: Bad Request
-      content:
-        application/json:
-          schema:
-            $ref: './errors.yaml#/ErrorResponse'
-    NotFound:
-      description: Not Found
-      content:
-        application/json:
-          schema:
-            $ref: './errors.yaml#/ErrorResponse'
-    ServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            $ref: './errors.yaml#/ErrorResponse'
+    CreateBannerRequest:
+      $ref: './components.yaml#/components/schemas/CreateBannerRequest'
+    UpdateBannerRequest:
+      $ref: './components.yaml#/components/schemas/UpdateBannerRequest'
+    BannerResource:
+      $ref: './components.yaml#/components/schemas/BannerResource'
+    ShowBannerResource:
+      $ref: './components.yaml#/components/schemas/ShowBannerResource'

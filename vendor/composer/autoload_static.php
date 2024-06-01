@@ -298,6 +298,7 @@ class ComposerStaticInitc91c8787a20ce988850d2b01d0fc5652
         'F' => 
         array (
             'Fruitcake\\Cors\\' => 15,
+            'Firebase\\JWT\\' => 13,
             'Fidry\\CpuCoreCounter\\' => 21,
             'Faker\\' => 6,
         ),
@@ -795,6 +796,10 @@ class ComposerStaticInitc91c8787a20ce988850d2b01d0fc5652
         array (
             0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
         ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
         'Fidry\\CpuCoreCounter\\' => 
         array (
             0 => __DIR__ . '/..' . '/fidry/cpu-core-counter/src',
@@ -1017,7 +1022,18 @@ class ComposerStaticInitc91c8787a20ce988850d2b01d0fc5652
         'Ackintosh\\Ganesha\\Strategy\\Rate\\Builder' => __DIR__ . '/..' . '/ackintosh/ganesha/src/Ganesha/Strategy/Rate/Builder.php',
         'Ackintosh\\Ganesha\\Traits\\BuildGanesha' => __DIR__ . '/..' . '/ackintosh/ganesha/src/Ganesha/Traits/BuildGanesha.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Domain\\Banner\\Actions\\CreateBannerAction' => __DIR__ . '/../..' . '/app/Domain/Banner/Actions/CreateBannerAction.php',
+        'App\\Domain\\Banner\\Actions\\DeleteBannerAction' => __DIR__ . '/../..' . '/app/Domain/Banner/Actions/DeleteBannerAction.php',
+        'App\\Domain\\Banner\\Actions\\ShowBannerAction' => __DIR__ . '/../..' . '/app/Domain/Banner/Actions/ShowBannerAction.php',
+        'App\\Domain\\Banner\\Actions\\UpdateBannerAction' => __DIR__ . '/../..' . '/app/Domain/Banner/Actions/UpdateBannerAction.php',
+        'App\\Domain\\Banner\\Models\\Banner' => __DIR__ . '/../..' . '/app/Domain/Banner/Models/Banner.php',
+        'App\\Domain\\Banner\\Models\\ShowBanner' => __DIR__ . '/../..' . '/app/Domain/Banner/Models/ShowBanner.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\ApiV1\\Modules\\Banners\\Controllers\\BannersController' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Banners/Controllers/BannersController.php',
+        'App\\Http\\ApiV1\\Modules\\Banners\\Requests\\CreateBannerRequest' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Banners/Requests/CreateBannerRequest.php',
+        'App\\Http\\ApiV1\\Modules\\Banners\\Requests\\UpdateBannerRequest' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Banners/Requests/UpdateBannerRequest.php',
+        'App\\Http\\ApiV1\\Modules\\Banners\\Resources\\BannerResource' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Banners/Resources/BannerResource.php',
+        'App\\Http\\ApiV1\\Modules\\Banners\\Resources\\ShowBannerResource' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Banners/Resources/ShowBannerResource.php',
         'App\\Http\\ApiV1\\Modules\\Foos\\Controllers\\FoosController' => __DIR__ . '/../..' . '/app/Http/ApiV1/Modules/Foos/Controllers/FoosController.php',
         'App\\Http\\ApiV1\\OpenApiGenerated\\Enums\\PaginationTypeEnum' => __DIR__ . '/../..' . '/app/Http/ApiV1/OpenApiGenerated/Enums/PaginationTypeEnum.php',
         'App\\Http\\ApiV1\\Support\\Pagination\\AbstractPageBuilder' => __DIR__ . '/../..' . '/app/Http/ApiV1/Support/Pagination/AbstractPageBuilder.php',
@@ -1030,7 +1046,9 @@ class ComposerStaticInitc91c8787a20ce988850d2b01d0fc5652
         'App\\Http\\ApiV1\\Support\\Resources\\EmptyResource' => __DIR__ . '/../..' . '/app/Http/ApiV1/Support/Resources/EmptyResource.php',
         'App\\Http\\ApiV1\\Support\\Tests\\ApiV1ComponentTestCase' => __DIR__ . '/../..' . '/app/Http/ApiV1/Support/Tests/ApiV1ComponentTestCase.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\EnsureUserIsBannerOwner' => __DIR__ . '/../..' . '/app/Http/Middleware/EnsureUserIsBannerOwner.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
+        'App\\Http\\Middleware\\SimpleJwtMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/SimpleJwtMiddleware.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
@@ -2465,6 +2483,14 @@ class ComposerStaticInitc91c8787a20ce988850d2b01d0fc5652
         'Fidry\\CpuCoreCounter\\Finder\\WmicPhysicalFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/WmicPhysicalFinder.php',
         'Fidry\\CpuCoreCounter\\Finder\\_NProcessorFinder' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/Finder/_NProcessorFinder.php',
         'Fidry\\CpuCoreCounter\\NumberOfCpuCoreNotFound' => __DIR__ . '/..' . '/fidry/cpu-core-counter/src/NumberOfCpuCoreNotFound.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\CachedKeySet' => __DIR__ . '/..' . '/firebase/php-jwt/src/CachedKeySet.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWK' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWK.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\JWTExceptionWithPayloadInterface' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWTExceptionWithPayloadInterface.php',
+        'Firebase\\JWT\\Key' => __DIR__ . '/..' . '/firebase/php-jwt/src/Key.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Fruitcake\\Cors\\CorsService' => __DIR__ . '/..' . '/fruitcake/php-cors/src/CorsService.php',
         'Fruitcake\\Cors\\Exceptions\\InvalidOptionException' => __DIR__ . '/..' . '/fruitcake/php-cors/src/Exceptions/InvalidOptionException.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',

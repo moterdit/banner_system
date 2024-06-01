@@ -46,4 +46,9 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     ];
+
+    protected $routeMiddleware = [
+        'simple-jwt' => \App\Http\Middleware\SimpleJwtMiddleware::class,
+        'banner-owner' => \App\Http\Middleware\EnsureUserIsBannerOwner::class,
+    ];
 }
